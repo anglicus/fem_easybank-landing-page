@@ -49,16 +49,6 @@ h3 {
   }
 }
 
-// "latest articles" subsection headings
-h4 {
-  font-size: 1rem;
-  line-height: 1.25rem;
-  letter-spacing: -0.29px;
-  font-weight: 300;
-
-  // same on all sizes
-}
-
 p {
   font-size: 0.9375rem;
   line-height: 1.5625rem;
@@ -115,6 +105,13 @@ button {
 a {
   text-decoration: none;
   font-weight: 400;
+
+  &.article-title {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    letter-spacing: -0.29px;
+    font-weight: 300;
+  }
 
   &.header-link {
 
