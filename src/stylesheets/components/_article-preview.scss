@@ -1,0 +1,61 @@
+// _article-preview.scss
+
+@use "../abstracts/mixins" as *;
+@use "../abstracts/colors" as *;
+
+.article-preview {
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  padding-bottom: 42px;
+  border-radius: 5px;
+
+  &__image {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+
+    @include breakpoint-up(medium) {
+      height: 400px;
+    }
+
+    @include breakpoint-up(large) {
+      height: 200px;
+    }
+
+  }
+
+  &__author {
+    margin: 25px 31px 0;
+    color: $grayishBlue;
+
+    @include breakpoint-up(large) {
+      margin: 25px 24px 0;
+    }
+  }
+
+  &__link {
+    color: black;
+
+    &:hover {
+      color: $limeGreen;
+    }
+  }
+
+  &__title {
+    margin: 8px 31px 0;
+
+    @include breakpoint-up(large) {
+      margin: 8px 24px 0;
+    }
+  }
+
+  &__text {
+    margin: 8px 31px 0;
+    color: $grayishBlue;
+
+    @include breakpoint-up(large) {
+      margin: 8px 24px 0;
+    }
+  }
+}

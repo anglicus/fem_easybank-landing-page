@@ -1,0 +1,19 @@
+// _button.scss
+
+@use "../abstracts/colors" as *;
+
+.cta-request-invite {
+  width: 163px;
+  height: 44px;
+  border: none;
+  border-radius: 22px;
+  background: linear-gradient(155deg, $limeGreen, $brightCyan);
+
+  color: white;
+
+  cursor: pointer;
+  
+  &:hover {
+    opacity: 0.75;
+  }
+}

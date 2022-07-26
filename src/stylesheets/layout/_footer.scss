@@ -1,0 +1,167 @@
+// _footer.scss
+
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
+@use "sass:math";
+
+.footer {
+  position: relative;
+  background-color: $darkBlue;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 40px 0 40px;
+
+  @include breakpoint-up(large) {
+    display: grid;
+    grid-template-columns: 2fr 3fr 3fr;
+    grid-template-areas: "logo links cta"
+                         "social links copyright";
+
+
+   padding: 48px math.div(165, 1440) * 100%;
+  }
+
+  &__logo {
+    color: $white;
+    width: 139px;
+    height: 20px;
+
+    @include breakpoint-up(large) {
+      grid-area: logo;
+      align-self: start;
+    }
+  }
+
+
+  &__social-icons {
+    margin-top: 31px;
+
+    @include breakpoint-up(large) {
+      grid-area: social;
+      align-self: end;
+      padding-top: 2px;
+    }
+  }
+
+  &__social-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    background-color:$white;
+
+    &:not(:first-child) {
+      margin-left: 12px;
+    }
+
+    mask-repeat: no-repeat;
+    mask-size: 24px 24px;
+
+    @include breakpoint-up(large) {
+      width: 20px;
+      height: 20px;
+      mask-size: 20px 20px;
+
+      &:not(:first-child) {
+        margin-left: 9px;
+      }
+    }
+
+    &:hover {
+      background-color: $limeGreen;
+    }
+
+    &.facebook-icon {
+      mask-image: url(/dist/assets/icon-facebook.svg);
+    }
+
+    &.youtube-icon {
+      mask-image: url(/dist/assets/icon-youtube.svg);
+
+    }
+
+    &.twitter-icon {
+      mask-image: url(/dist/assets/icon-twitter.svg);
+    }
+
+    &.pinterest-icon {
+      mask-image: url(/dist/assets/icon-pinterest.svg);
+    }
+
+    &.instagram-icon {
+      mask-image: url(/dist/assets/icon-instagram.svg);
+    }
+    
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 27px;
+
+    @include breakpoint-up(large) {
+      grid-area: links;
+      justify-self: start;
+      margin-top: 0;
+      margin-left: 6px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-auto-flow: column;
+      column-gap: 100px;
+      row-gap: 8px;
+    
+    }
+  }
+
+  &__link {
+    color: $white;
+    margin-bottom: 8px;
+
+    @include breakpoint-up(large) {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      color: $limeGreen;
+    }
+  }
+
+  &__cta {
+    margin-top: 26px;
+
+    @include breakpoint-up(large) {
+      grid-area: cta;
+      justify-self: end;
+      margin-top: 0;
+    }
+  }
+
+  &__copyright {
+    margin-top: 22px;
+    color: $grayishBlue;
+
+    @include breakpoint-up(large) {
+      grid-area: copyright;
+      justify-self: end;
+      align-self: end;
+
+      margin-top: 0;
+      padding-bottom: 5px;
+    }
+  }
+
+  &__test {
+    width: 24px;
+    height: 24px;
+    background-color: red;
+    mask-image: url(/dist/assets/icon-facebook.svg);
+    mask-repeat: no-repeat;
+    mask-size: 24px 24px;
+  }
+}

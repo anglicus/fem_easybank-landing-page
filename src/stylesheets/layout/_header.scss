@@ -1,0 +1,143 @@
+// _header.scss
+
+@use "../abstracts/mixins" as *;
+@use "../abstracts/colors" as *;
+@use "../abstracts/animations" as *;
+@use "sass:math";
+
+.header {
+  position: relative;
+  padding: 18px 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  @include breakpoint-up(large) {
+    padding: 20px math.div(160, 1400) * 100% 16px;
+  }
+
+  &__links {
+    display: none;
+
+    flex-direction: column;
+    align-items: center;
+    z-index: 4;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 88px;
+    background-color: white;
+    width: calc(100% - 48px);
+    padding: 32px 0;
+    border-radius: 4px;
+
+
+    &.open {
+      display: flex;
+      animation: fade-in 0.75s ease-in-out;
+    }
+
+    &.closed {
+      display: flex;
+      animation: fade-out 0.75s ease-in-out;
+      opacity: 0;
+      pointer-events: none;
+
+      @include breakpoint-up(large) {
+        animation: none;
+        opacity: 1;
+      }
+    }
+
+    @include breakpoint-up(large) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: auto;
+      border-radius: none;
+
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+      padding: 0 0 0 26px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    color: $grayishBlue;
+
+    &:not(:first-child) {
+      margin-top: 24px;
+    }
+    
+    &:hover {
+      color: black;
+    }
+    
+    @include breakpoint-up(large) {
+      
+      &:not(:first-child) {
+        margin-top: 0;
+        margin-left: 30px;
+      }
+     
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 42px;
+      }
+
+      &:hover:after {
+        border-bottom: 4px solid $limeGreen;
+      }
+    }
+  }
+
+  &__menu-screen {
+    display: none;
+    z-index: 2;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(180deg, #2D314D 0%, rgba(45, 49, 77, 0.0001) 100%);
+
+    &.open {
+      display: block;
+        animation: fade-in 0.5s ease-in-out;
+      }
+
+    &.closed {
+      display: block;
+      animation: fade-out 0.75s ease-in-out;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @include breakpoint-up(large) {
+      display: none;
+    }
+  }
+
+  &__cta {
+    display: none;
+
+    @include breakpoint-up(large) {
+      display: block;
+    }
+  }
+
+  &__btn-menu {
+
+    @include breakpoint-up(large) {
+      display: none;
+    }
+  }
+}

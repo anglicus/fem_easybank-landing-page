@@ -1,0 +1,17 @@
+// _attribution.scss
+
+@use "../abstracts/colors" as *;
+
+.attribution { 
+  position: absolute;
+  bottom: 10px;
+  font-size: 13px; 
+  text-align: center;
+  color: white;
+  left: 50%;
+  transform: translateX(-50%);
+
+  & a {
+    color: $limeGreen;
+  }
+}

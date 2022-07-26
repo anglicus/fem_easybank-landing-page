@@ -1,0 +1,144 @@
+// _typography.scss
+
+@use "../abstracts/mixins" as *;
+
+html {
+  font-size: 100%;
+}
+
+// page heading
+h1 {
+  font-size: 2.5rem;
+  line-height: 2.9375rem;
+  letter-spacing: -0.5px;
+  font-weight: 300;
+
+  @include breakpoint-up(large) {
+    font-size: 3.5rem;
+    line-height: 4rem;
+    letter-spacing: -0.75px;
+  }
+}
+
+// section headings
+h2 {
+  font-size: 2rem;
+  line-height: 2.35rem;
+  letter-spacing: -0.4px;
+  font-weight: 300;
+
+  @include breakpoint-up(large) {
+    font-size: 2.5rem;
+    line-height: 4rem;
+    letter-spacing: -0.7px;
+  }
+}
+
+// "why choose" subsection headings
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  letter-spacing: -0.36px;
+  font-weight: 300;
+
+  @include breakpoint-up(large) {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    letter-spacing: -0.43px;
+    font-weight: 300;
+  }
+}
+
+// "latest articles" subsection headings
+h4 {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  letter-spacing: -0.29px;
+  font-weight: 300;
+
+  // same on all sizes
+}
+
+p {
+  font-size: 0.9375rem;
+  line-height: 1.5625rem;
+  letter-spacing: -0.23px;
+  font-weight: 400;
+
+  @include breakpoint-up(large) {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    letter-spacing: -0.3px;
+  }
+
+
+  &.feature-description {
+    
+    @include breakpoint-up(large) {
+      font-size: 1rem;
+      line-height: 1.625rem;
+    }
+  }
+
+  &.article-author {
+    font-size: 0.625rem;
+    line-height: 1.125rem;
+    letter-spacing: -0.16px;
+    font-weight: 400;
+  }
+
+  &.article-text {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    letter-spacing: -0.2px;
+    font-weight: 400;
+  }
+
+  &.copyright {
+    font-size: 0.9375rem;
+    line-height: 1.73333rem;
+    letter-spacing: -0.23px;
+    font-weight: 400;
+  }
+
+  // same on all screen sizes
+}
+
+button {
+  font-size: 0.875rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+
+  // same on all screen sizes
+}
+
+a {
+  text-decoration: none;
+  font-weight: 400;
+
+  &.header-link {
+
+    font-size: 1.125rem;
+    line-height: 1.321875rem;
+
+    @include breakpoint-up(large) {
+      font-size: 0.875rem;
+      line-height: 1.028125rem;
+      letter-spacing: -0.11px;
+    }
+  }
+
+  &.footer-link {
+    font-size: 0.9375rem;
+    line-height: 1.625rem;
+    letter-spacing: -0.23px;
+  }
+
+  &.popup-link {
+    font-size: 1.125rem;
+    line-height: 1.328125rem;
+    letter-spacing: -0.14px;
+  }
+
+  // same on all screen sizes
+}

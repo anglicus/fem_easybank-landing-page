@@ -1,0 +1,201 @@
+// _main.scss
+
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
+@use "sass:math";
+
+.hero {
+  padding-bottom: 88px;
+
+  position: relative;
+  background-image: url("../assets/bg-intro-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center calc(100% - 313px);
+
+  background-color: $veryLightGray;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include breakpoint-up(large) {
+    background-image: url("../assets/bg-intro-desktop.svg");
+    background-position: 625px -264px;
+    background-size: 1285px auto;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 656px;
+    padding-left: math.div(165, 1440) * 100%;
+  }
+
+  &__image-div {
+    overflow: hidden;
+
+    @include breakpoint-up(large) {
+      position: relative;
+      height: 779px;
+      align-self: flex-start;
+      margin-left: 100px;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 91.5%;
+    margin: -121px auto 0;
+
+    @include breakpoint-up(large) {
+      height: 120%;
+      width: auto;
+      margin-right: -128px;
+    }
+  }
+
+  &__text-div {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    text-align: center;
+
+    @include breakpoint-up(large) {
+      align-items: flex-start;
+      text-align: left;
+      margin-top: 170px;
+      width: 447px;
+    }
+  }
+
+  &__blurb {
+    margin-top: 16px;
+    padding: 0px 24px;
+    color: $grayishBlue;
+
+    @include breakpoint-up(large) {
+      margin-top: 24px;
+      padding: 0;
+    }
+  }
+
+  &__cta {
+    margin-top: 32px;
+
+    @include breakpoint-up(large) {
+      margin-top: 36px;
+    }
+  }
+}
+
+.features {
+  padding: 64px 24px;
+  background-color: $ltGrayishBlue;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  text-align: center;
+
+  @include breakpoint-up(large) {
+    padding: 94px math.div(165, 1440) * 100% 100px;
+    text-align: left;
+  }
+
+  &__blurb {
+    margin-top: 14px;
+    margin-bottom: 24px;
+    color: $grayishBlue;
+
+    @include breakpoint-up(large) {
+      width: 60%;
+      margin-top: 18px;
+    }
+  }
+
+  &__sections-div {
+    
+    @include breakpoint-up(large) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__section {
+    margin-top: 32px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include breakpoint-up(large) {
+      align-items: flex-start;
+      margin-top: 48px;
+      width: min(255px, 23%);
+
+      &:not(:first-child) {
+        margin-left: 30px;
+      }
+    }
+  }
+
+  &__sub-heading {
+    margin-top: 24px;
+
+    @include breakpoint-up(large) {
+      margin-top: 41px;
+    }
+  }
+
+  &__description {
+    margin-top: 16px;
+    color: $grayishBlue;
+
+    @include breakpoint-up(large) {
+      margin-top: 26px;
+      width: 98%;
+    }
+  }
+
+  @include breakpoint-up(large) {
+    display: grid;
+  }
+}
+
+.articles {
+  position: relative;
+  padding: 88px 24px;
+  background-color: $veryLightGray;
+
+  @include breakpoint-up(large) {
+    padding: 80px math.div(165, 1440) * 100% 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 30px;
+  }
+
+  &__heading {
+    text-align: center;
+    margin-bottom: 32px;
+
+    @include breakpoint-up(large) {
+      grid-area: 1 / 1 / span 1 / span 4;
+      text-align: left;
+    }
+  }
+
+  &__article {
+    margin-top: 24px;
+
+    @include breakpoint-up(large) {
+      margin-top: 10px;
+      max-width: 255px;
+      min-width: 100px;
+    }
+  }
+}

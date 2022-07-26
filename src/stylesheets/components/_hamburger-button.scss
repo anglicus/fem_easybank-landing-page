@@ -1,0 +1,32 @@
+// _hamburger-button.scss
+
+.hamburger-button {
+  position: relative;
+  border: none;
+  background: none;
+
+  cursor: pointer;
+
+  width: 24px;
+  height: 28px;
+
+  &__icon {
+    margin: auto;
+  }
+
+  & > .close-icon {
+    display: none;
+  }
+
+  &.open {
+
+    & > .hamburger-icon {
+      display: none
+    }
+
+    & > .close-icon {
+      display: block;
+    }
+  }
+
+}
