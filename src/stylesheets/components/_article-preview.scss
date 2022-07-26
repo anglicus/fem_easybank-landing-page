@@ -37,6 +37,23 @@
   &__link {
     color: black;
 
+    margin: 8px 31px 0;
+
+    @include breakpoint-up(large) {
+      margin: 8px 24px 0;
+    }
+
+    &:hover {
+      color: $limeGreen;
+    }
+  }
+
+  
+
+  /*
+  &__link {
+    color: black;
+
     &:hover {
       color: $limeGreen;
     }
@@ -49,6 +66,7 @@
       margin: 8px 24px 0;
     }
   }
+*/
 
   &__text {
     margin: 8px 31px 0;
