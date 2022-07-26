@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/responsive-mobilefirst-design-using-sass-flexbox-grid-fading-menu-ip6Gk47Ee5)
-- Live Site URL: [Add live site URL here](https://fem-easybank-landing-page-plum.vercel.app/)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/responsive-mobilefirst-design-using-sass-flexbox-grid-fading-menu-ip6Gk47Ee5)
+- Live Site URL: [Vercel](https://fem-easybank-landing-page-plum.vercel.app/)
 
 ## My process
 
